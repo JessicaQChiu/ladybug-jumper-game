@@ -1,0 +1,95 @@
+*,
+*::before,
+*::after { 
+  box-sizing: border-box;
+  user-select: none; /*Removes ability to highlight text/images*/
+}
+
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  overflow: hidden;
+  background-color: #0E1F19;
+}
+
+.world {
+  position: relative; 
+}
+
+.text{
+  text-align: center;
+  font-family: 'Courier New', Courier, sans-serif;
+  font-size: calc(10px + 2vw);
+  font-weight: bold;
+  text-shadow: 3px 0 #fff, -3px 0 #fff, 0 3px #fff, 0 -3px #fff,
+  2px 2px #fff, -2px -2px #fff, 2px -2px #fff, -2px 2px #fff; 
+}
+
+.score {
+  position: absolute;
+  right: 3vmin;
+  top: 3vmin;
+}
+
+.start-screen {
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  transform: translate(
+    -50%,
+    -50%
+  ); 
+}
+
+/*To hide the start-screen while the game is being played.*/
+.hide {
+  display: none;
+}
+
+.controls {
+  display: block;
+  padding-top: 1vmin;
+  font-size: calc(8px + 1.2vw);
+}
+
+.path {
+  --left: 0;
+  position: absolute;
+  width: 150%;
+  bottom: -10%;
+  left: calc(var(--left) * 1%);
+}
+
+.ladybug {
+  --bottom: 0;
+  position: absolute;
+  left: 6%;
+  height: 35%;
+  bottom: calc(var(--bottom) * 1%);
+}
+
+.obstacle {
+  position: absolute;
+  left: calc(var(--left) * 1%);
+  height: 30%;
+  bottom: 0;
+}
+
+.foreground {
+  --left: 0;
+  position: absolute;
+  width: 100%;
+  left: calc(var(--left) * 1%);
+  transform: translateY(1%);
+}
+
+.background {
+  --left: 0;
+  position: absolute;
+  width: 100%;
+  left: calc(var(--left) * 1%);
+  z-index: -1;
+}
