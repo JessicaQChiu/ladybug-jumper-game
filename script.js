@@ -9,6 +9,7 @@ const SPEED_SCALE_INCREASE = 0.00001;
 const worldElem = document.querySelector("[data-world]");
 const scoreElem = document.querySelector("[data-score]");
 const startScreenElem = document.querySelector("[data-start-screen]");
+const loseGameText = document.querySelector(".lose-info");
 
 setPixelToWorldScale();
 window.addEventListener("resize", setPixelToWorldScale);
@@ -80,12 +81,12 @@ function handleStart() {
     document.removeEventListener("click", handleStart);
     document.removeEventListener("keydown", handleStart);
     startScreenElem.classList.add("hide"); //Hides start-screen HTML element.
+    loseGameText.style.display="block"; //Displays game lose text whenever game is restarted.
     window.requestAnimationFrame(update); //Update function calls itself, loops indefinitely until a lose condition.
 };
 
 function handleLose() {
     setLadybugLose();
-
     /*200ms pause - avoids an accidental immediate restart after losing + can see the .hide text indicating they lost.*/
     setTimeout(() => {
         document.addEventListener("keydown", handleStart, { once: true });

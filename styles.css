@@ -44,8 +44,8 @@ body {
   ); 
 }
 
-/*To hide the start-screen while the game is being played.*/
-.hide {
+/*To hide the start-screen and game lose text while the game is being played.*/
+.hide, .lose-info {
   display: none;
 }
 
