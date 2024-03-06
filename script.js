@@ -13,6 +13,7 @@ const startScreenElem = document.querySelector("[data-start-screen]");
 setPixelToWorldScale();
 window.addEventListener("resize", setPixelToWorldScale);
 document.addEventListener("keydown", handleStart, { once: true });
+document.addEventListener("click", handleStart, { once: true });
 
 /*Update loop - runs every single frame, scales to the response rate.*/
 let lastTime;
@@ -76,6 +77,8 @@ function handleStart() {
     setupPath();
     setupLadybug();
     setupObstacle();
+    document.removeEventListener("click", handleStart);
+    document.removeEventListener("keydown", handleStart);
     startScreenElem.classList.add("hide"); //Hides start-screen HTML element.
     window.requestAnimationFrame(update); //Update function calls itself, loops indefinitely until a lose condition.
 };
@@ -86,6 +89,7 @@ function handleLose() {
     /*200ms pause - avoids an accidental immediate restart after losing + can see the .hide text indicating they lost.*/
     setTimeout(() => {
         document.addEventListener("keydown", handleStart, { once: true });
+        document.addEventListener("click", handleStart, { once: true });
         startScreenElem.classList.remove("hide");
     }, 200);
 };
