@@ -21,6 +21,8 @@ export function setupLadybug() {
     /*Setup is called every time the game is lost - need to remove in case it already exists to restart it.*/
     document.removeEventListener("keydown", onJump);
     document.addEventListener("keydown", onJump);
+    document.removeEventListener("click", onJump);
+    document.addEventListener("click", onJump);
 };
 
 export function updateLadybug(delta, speedScale) {
@@ -70,7 +72,7 @@ function handleJump(delta) {
 };
 
 function onJump(e) {
-    if (e.code !== "Space" || isJumping) return;
+    if (isJumping) return;
     yVelocity = JUMP_SPEED;
     isJumping = true;
 };
