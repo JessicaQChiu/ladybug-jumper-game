@@ -24,14 +24,13 @@ body {
   font-family: 'Courier New', Courier, sans-serif;
   font-size: calc(10px + 2vw);
   font-weight: bold;
-  text-shadow: 3px 0 #fff, -3px 0 #fff, 0 3px #fff, 0 -3px #fff,
-  2px 2px #fff, -2px -2px #fff, 2px -2px #fff, -2px 2px #fff; 
+  text-shadow: 2px 1px 2px #ffffff;
 }
 
 .score {
   position: absolute;
-  right: 3vmin;
-  top: 3vmin;
+  right: 2vmin;
+  top: 1vmin;
 }
 
 .start-screen {
@@ -44,15 +43,21 @@ body {
   ); 
 }
 
+.text-title{
+  width: 75%;
+  display: block;
+  margin: auto;
+}
+
+.text-instructions{
+  width: 90%;
+  display: block;
+  margin: auto;
+}
+
 /*To hide the start-screen and game lose text while the game is being played.*/
 .hide, .lose-info {
   display: none;
-}
-
-.controls {
-  display: block;
-  padding-top: 1vmin;
-  font-size: calc(8px + 1.2vw);
 }
 
 .path {
@@ -92,4 +97,25 @@ body {
   width: 100%;
   left: calc(var(--left) * 1%);
   z-index: -1;
+}
+
+@media screen and (max-width: 768px){
+  .text-instructions{
+    width: 120%;
+    display: block;
+    margin: 0% -10%;
+  }
+}
+
+@media screen and (max-width: 480px){
+  .text-title{
+    width: 100%;
+    display: block;
+    margin: auto;
+  }
+  .text-instructions{
+    width: 160%;
+    display: block;
+    margin: 0% -30%;
+  }
 }

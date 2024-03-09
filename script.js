@@ -66,7 +66,7 @@ function updateSpeedScale(delta) {
 
 function updateScore(delta) {
     score += delta * 0.01; //1 point = 100 milliseconds that passes.
-    scoreElem.textContent = Math.floor(score);
+    scoreElem.textContent = "Score:"+Math.floor(score);
 };
 
 function handleStart() {

@@ -10,17 +10,20 @@
     <meta property="og:image" content="https://raw.githubusercontent.com/JessicaQChiu/ladybug-jumper-game/update-social-preview/imgs/ladybug-game-preview.png" />
     <meta property="og:description" content="Play as a jumping ladybug in this 2D platformer!">
     <title>Ladybug Jumper</title>
+
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
     <script src="script.js" type="module"></script>
 </head>
 
 <body>
     <div class="world" data-world>
         <div class="score text" data-score>0</div>
-        <div class="start-screen text" data-start-screen>
-            <div class="lose-info text">YOU LOSE :(</div>
-            Press Any Key To Start
-            <span class="controls text">Press [SPACE] or CLICK to jump!</span>
+        <div class="start-screen" data-start-screen>
+            <p class="lose-info text">YOU LOSE :(</p>
+            <img src="imgs/text-title.png" class="text-title" alt="Title screen of the Ladybug Jump game">
+            <img src="imgs/text-instructions.png" class="text-instructions">
         </div>
         <img src="imgs/path.png" class="path" data-path>
         <img src="imgs/path.png" class="path" data-path>
