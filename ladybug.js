@@ -1,5 +1,8 @@
 import { incrementCustomProperty, getCustomProperty, setCustomProperty } from "./updateCustomProperty.js";
 
+const SOUND_JUMP = new Audio("audio/sound-jump.mp3");
+const SOUND_LOSE = new Audio("audio/sound-lose.mp3");
+
 const ladybugElem = document.querySelector("[data-ladybug]");
 const JUMP_SPEED = 0.45; //Vertical displacement.
 const GRAVITY = 0.0015;
@@ -37,6 +40,7 @@ export function getLadybugRect() {
 
 export function setLadybugLose() {
     ladybugElem.src = "imgs/ladybug-lose.png";
+    SOUND_LOSE.play();
 };
 
 function handleRun(delta, speedScale) {
@@ -75,6 +79,7 @@ function onJump(e) {
     if (isJumping) return;
     yVelocity = JUMP_SPEED;
     isJumping = true;
+    SOUND_JUMP.play();
 };
 
 

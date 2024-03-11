@@ -16,6 +16,10 @@ window.addEventListener("resize", setPixelToWorldScale);
 document.addEventListener("keydown", handleStart, { once: true });
 document.addEventListener("click", handleStart, { once: true });
 
+// window.onload = function() {
+//     document.getElementById("bg-music").play();
+// }
+
 /*Update loop - runs every single frame, scales to the response rate.*/
 let lastTime;
 let speedScale;

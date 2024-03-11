@@ -50,7 +50,7 @@ body {
 }
 
 .text-instructions{
-  width: 90%;
+  width: 80%;
   display: block;
   margin: auto;
 }
@@ -101,9 +101,9 @@ body {
 
 @media screen and (max-width: 768px){
   .text-instructions{
-    width: 120%;
+    width: 110%;
     display: block;
-    margin: 0% -10%;
+    margin: 0% -5%;
   }
 }
 
