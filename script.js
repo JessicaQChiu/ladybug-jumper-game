@@ -16,6 +16,10 @@ window.addEventListener("resize", setPixelToWorldScale);
 document.addEventListener("keydown", handleStart, { once: true });
 document.addEventListener("click", handleStart, { once: true });
 
+// window.onload = function() {
+//     document.getElementById("bg-music").play();
+// }
+
 /*Update loop - runs every single frame, scales to the response rate.*/
 let lastTime;
 let speedScale;
@@ -80,6 +84,7 @@ function handleStart() {
     setupObstacle();
     document.removeEventListener("click", handleStart);
     document.removeEventListener("keydown", handleStart);
+    document.getElementById("bg-music").play(); //Background music starts during first game run.
     startScreenElem.classList.add("hide"); //Hides start-screen HTML element.
     loseGameText.style.display="block"; //Displays game lose text whenever game is restarted.
     window.requestAnimationFrame(update); //Update function calls itself, loops indefinitely until a lose condition.
