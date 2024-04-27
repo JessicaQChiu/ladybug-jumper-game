@@ -24,7 +24,7 @@ body {
   font-family: 'Courier New', Courier, sans-serif;
   font-size: calc(10px + 2vw);
   font-weight: bold;
-  text-shadow: 2px 1px 2px #ffffff;
+  text-shadow: 1px 1px #ffffff;
 }
 
 .score {

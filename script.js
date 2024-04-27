@@ -10,6 +10,7 @@ const worldElem = document.querySelector("[data-world]");
 const scoreElem = document.querySelector("[data-score]");
 const startScreenElem = document.querySelector("[data-start-screen]");
 const loseGameText = document.querySelector(".lose-info");
+const textTitle = document.querySelector(".text-title");
 
 setPixelToWorldScale();
 window.addEventListener("resize", setPixelToWorldScale);
@@ -87,6 +88,7 @@ function handleStart() {
     document.getElementById("bg-music").play(); //Background music starts during first game run.
     startScreenElem.classList.add("hide"); //Hides start-screen HTML element.
     loseGameText.style.display="block"; //Displays game lose text whenever game is restarted.
+    textTitle.style.display="none";
     window.requestAnimationFrame(update); //Update function calls itself, loops indefinitely until a lose condition.
 };
 
